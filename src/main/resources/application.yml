@@ -1,7 +1,4 @@
-awsAccessKeyId: ${AWS_ACCESS_KEY_ID}
-awsSecretAccessKey: ${AWS_SECRET_ACCESS_KEY}
 env: local
-s3_url_prefix: ${S3_URL_PREFIX}
 
 email:
   server: http://localhost:3333
@@ -9,7 +6,6 @@ email:
 server:
   port: 8091
   hostname: ${HOSTNAME}
-  jwtSecret: ${JWT_SECRET}
 
 spring:
 
@@ -39,11 +35,6 @@ spring:
     bootstrap-servers: ${KAFKA_BOOTSTRAP}
     consumer:
       group-id: "myGroup"
-
-  task:
-    scheduling:
-      pool:
-        size: 5
 
   springdoc:
     swagger-ui:
