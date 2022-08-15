@@ -10,6 +10,7 @@ data class ErrorResponse(
 @Serializable
 enum class ErrorType {
   NoError,
+  TermInvalid,
   Unauthorized,
   UnknownError,
 }
