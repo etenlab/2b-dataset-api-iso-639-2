@@ -4,7 +4,7 @@ email:
   server: http://localhost:3333
 
 server:
-  port: 8091
+  port: 8302
   hostname: ${HOSTNAME}
 
 spring:
