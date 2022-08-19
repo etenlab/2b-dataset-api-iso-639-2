@@ -12,6 +12,7 @@ import org.springframework.data.repository.query.Param
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate
 import org.springframework.web.bind.annotation.GetMapping
+import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.ResponseBody
 import org.springframework.web.bind.annotation.RestController
 import javax.sql.DataSource
@@ -39,7 +40,7 @@ class Login(
 
   @GetMapping("/api/iso-639-2/find-by-iso-639-2/{term}")
   @ResponseBody
-  fun find_by_iso_639_2(@Param("term") term: String): ListResponse {
+  fun find_by_iso_639_2(@PathVariable("term") term: String = ""): ListResponse {
     try {
       if (term.isEmpty()) return ListResponse(ErrorType.TermInvalid)
 
@@ -88,7 +89,7 @@ class Login(
 
   @GetMapping("/api/iso-639-2/find-by-english-name/{term}")
   @ResponseBody
-  fun find_by_english_name(@Param("term") term: String): ListResponse {
+  fun find_by_english_name(@PathVariable("term") term: String = ""): ListResponse {
     try {
       if (term.isEmpty()) return ListResponse(ErrorType.TermInvalid)
 
