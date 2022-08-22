@@ -11,6 +11,7 @@ import org.springframework.context.annotation.DependsOn
 import org.springframework.data.repository.query.Param
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate
+import org.springframework.web.bind.annotation.CrossOrigin
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.ResponseBody
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController
 import javax.sql.DataSource
 
 @RestController
+@CrossOrigin(origins = ["*"])
 @DependsOn("DatabaseSync")
 class Login(
     @Autowired
